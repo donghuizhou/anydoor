@@ -1,0 +1,25 @@
+{
+  "name": "anydoor",
+  "version": "1.0.0",
+  "description": "anydoor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donghuizhou/anydoor.git"
+  },
+  "author": "zhoudonghui",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/donghuizhou/anydoor/issues"
+  },
+  "homepage": "https://github.com/donghuizhou/anydoor#readme",
+  "devDependencies": {
+    "chalk": "^2.3.0"
+  },
+  "dependencies": {
+    "handlebars": "^4.0.11"
+  }
+}
