@@ -1,6 +1,6 @@
 {
   "name": "anydoor",
-  "version": "0.110",
+  "version": "0.1.1",
   "description": "anydoor",
   "main": "index.js",
   "scripts": {
