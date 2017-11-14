@@ -8,6 +8,7 @@ const config = require('../config/defaultConfig.js');
 const mine = require('./mine.js');
 const compress = require('./compress.js');
 const range = require('./range.js');
+const isFresh = require('./cache.js');
 
 const tplPath = path.join(__dirname, '../templates/dir.tpl');
 const source = fs.readFileSync(tplPath);
@@ -19,6 +20,13 @@ module.exports = async function (req, res, filePath) {
     if (stats.isFile()) {
       const contentType = mine(filePath);
       res.setHeader('Content-Type', contentType);
+
+      if (isFresh(stats, req, res)) {
+        res.statusCode = 304;
+        res.end();
+        return;
+      }
+
       let rs;
       const {code, start, end} = range(stats.size, req, res);
       if (code === 200) {
